@@ -37,14 +37,11 @@ public class GetLoanTest
     {
         // Arrange
         var expectedLoan = new Loan { Id = 1 };
-        _mockLoanRepository.GetLoan(expectedLoan.Id).Returns(expectedLoan);
-
+        
         // Act
-        var expected = await _mockLoanRepository.GetLoan(expectedLoan.Id);
         var actual = await _jsonLoanRepository.GetLoan(expectedLoan.Id);
-
+       
         // Assert
         Assert.NotNull(actual);
-        Assert.Equal(expected!.Id, actual.Id);
-    }
+        Assert.Equal(expectedLoan.Id, actual.Id);
 }

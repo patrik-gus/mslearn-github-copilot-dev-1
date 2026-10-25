@@ -44,4 +44,5 @@ public class GetLoanTest
         // Assert
         Assert.NotNull(actual);
         Assert.Equal(expectedLoan.Id, actual.Id);
+    }
 }
